@@ -1,7 +1,7 @@
 const Stories = () => {
     return (
         <div>
-            <h1>Stories</h1>
+            <h1>The section where I yap. If you found this, good job.</h1>
         </div>
     );
 }; 

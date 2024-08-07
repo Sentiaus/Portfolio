@@ -31,3 +31,7 @@ body {
     text-wrap: balance;
   }
 }
+
+p{
+  @apply text-base md:text-lg mb-2
+}
