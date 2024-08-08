@@ -1,5 +1,7 @@
+import BackToTop from "@/components/backToTop/BackToTop";
 import About from "@/components/mainpage/about/about";
 import BigAssHead from "@/components/mainpage/bigasshead/bigasshead";
+import Projects from "@/components/mainpage/projects/projects";
 import Image from "next/image";
 
 const Home = () => {
@@ -7,6 +9,8 @@ const Home = () => {
         <div>
             <BigAssHead />
             <About />
+            <Projects />
+            {/* <BackToTop /> */}
         </div>
     );
 };
