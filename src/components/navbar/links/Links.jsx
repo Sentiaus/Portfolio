@@ -14,10 +14,10 @@ const Links = () => {
             title: "Resume",
             path: "/resume",
         },
-        {
-            title: "Stories",
-            path: "/stories",
-        },
+        // {
+        //     title: "Stories",
+        //     path: "/stories",
+        // },
         
     ];
 

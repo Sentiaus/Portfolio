@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" >
       <body className={montserrat.className}>
-        <div className="w-full bg-slate-100 antialiased">
+        <div className="w-full bg-slate-50 antialiased">
           <div className="container mx-auto text-slate-700">
             <Navbar />
             {children}
