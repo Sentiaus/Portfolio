@@ -4,6 +4,13 @@ const Projects = () => {
 
     const projectDesc = [
         {
+            name: "Buckeyes Shuffled Website",
+            date: "July 2024-Present",
+            description: "Website I made for my club, mainly to practice my front-end skills and to figure out routing in react without NextJS. First time I also had to account for decisions made by other people when creating a project. Gonna try to maintain it and add some cool features before I graduate and leave the club.", 
+            link: "https://buckeyes-shuffled.vercel.app/",
+            linkDescription: "Buckeyes Shuffled"
+            },
+        {
             name: "Lyrics.AI",
             date: "July 2024-Present",
             description: "I'm currently working on a little project to test myself. I'm creating a web application where a user input a question about a phrase that may appear in a song, and for the app to return the lyrics, the song link, and the number of times the lyrics occur in said song. Eventually a login system will be created so the user can see previous searches and song search rankings. My goal for this project is to learn more about web development combined with LLM API's, and the eventual maintenance and upkeep of the project.",
