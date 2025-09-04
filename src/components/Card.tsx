@@ -6,7 +6,7 @@ export default function Card({
 }: CardProps){
     return(
         <div className={`color-primary dark:color-dark-primary  ${cssString ?? ""}`}>
-
+            {children}
         </div>
     )
 }
