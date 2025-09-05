@@ -2,10 +2,16 @@ import Link from "next/link"
 import { ButtonProps } from "@/types"
 
 
-export default function Button({title, link, cssString}: ButtonProps) {
+export default function Button({title, link, className}: ButtonProps) {
 
     return (
-        <Link href={link} className={`bg-button dark:bg-dark-button px-4 py-2 rounded-lg hover:bg-primary ${cssString ?? ""}`}>
+        <Link href={link} className={`px-4 py-2 rounded-lg 
+        border 
+        border-dark-primary hover:border-[#c5ac91] hover:text-[#C68A39] 
+        dark:border-primary dark:hover:border-[#C68A39]
+        text-center
+        transition-colors duration-300 ease-in-out
+        ${className ?? ""}`}>
             {title}
         </Link>
     )

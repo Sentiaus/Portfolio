@@ -2,10 +2,10 @@ import { CardProps } from "@/types";
 
 export default function Card({
     children,
-    cssString
+    className
 }: CardProps){
     return(
-        <div className={`color-primary dark:color-dark-primary  ${cssString ?? ""}`}>
+        <div className={`bg-primary dark:bg-dark-primary ${className ?? ""}`}>
             {children}
         </div>
     )

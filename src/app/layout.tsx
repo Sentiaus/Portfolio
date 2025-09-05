@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
+import { Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
 
-const openSans = Open_Sans({
-  variable: "--font-open-sans",
-  subsets: ["latin"]
+const SourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-source-serif"
 })
 
 
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${openSans.variable} ${openSans.variable} antialiased`}
+        className={`${SourceSerif.className} antialiased`}
       >
         {children}
       </body>
