@@ -6,7 +6,7 @@ import { AboutMe } from "@/constants";
 export default function About() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-8 lg:py-8 gap-16 sm:px-20 ">
-        <div className="flex flex-1 w-full h-screen lg:h-full gap-4 flex-col lg:flex-row lg:rounded-md overflow-hidden bg-primary dark:bg-dark-primary">
+        <div className="flex flex-1 w-full max-w-6xl md:max-h-[1000px] h-screen lg:h-full gap-4 flex-col lg:flex-row md:rounded-md overflow-hidden bg-primary dark:bg-dark-primary">
           <Card className="relative flex-1 min-h-[33vh]">
             <Image
                 src="/GradPic.png"
@@ -25,6 +25,6 @@ export default function About() {
             </div>
           </Card>
         </div>
-      </div>
+    </div>
   );
 }

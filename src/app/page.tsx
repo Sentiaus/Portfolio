@@ -29,7 +29,7 @@ export default function Home() {
   <div className="flex flex-col items-center justify-center min-h-screen px-8 lg:py-8 gap-16 sm:px-20 ">
     <div className="flex flex-1 w-full max-w-6xl md:max-h-[1000px] h-screen lg:h-full gap-4 flex-col lg:flex-row md:rounded-md overflow-hidden bg-primary dark:bg-dark-primary">
       <Card className="relative flex-1 min-h-[33vh]">
-        <Image
+        <Image  
           src="/GradPic.png"
           alt="Picture of Victor Fawole"
           fill
@@ -37,14 +37,16 @@ export default function Home() {
         />
       </Card>
       <Card className="flex-1 flex flex-col items-center">
-        <div className="flex-1 flex flex-col py-4 items-center justify-center text-center flex-[1_1_40%]">
-          <h1 className="text-2xl md:text-4xl lg:text-6xl pt-16 ">Victor Fawole</h1>
-          <h3>The Ohio State University</h3>
+        <div className="flex-1 flex flex-col py-4 items-center justify-center text-center flex-[1_1_50%]">
+          <h1 className="text-2xl md:text-4xl lg:text-6xl pt-4 ">Victor Fawole</h1>
+          <div className="my-8 border-b w-32"></div>
+          <h3 className="text-sm md:text-xl">The Ohio State University</h3>
+          <h3 className="text-xs md:text-lg">Computer Science and Engineering, B.S.</h3>
         </div>
-        <div className="flex flex-col flex-1 flex-[2_1_60%] justify-center items-center">
+        <div className="flex flex-col flex-1 flex-[2_1_50%] justify-start items-center">
           <Button title="About" link="/about" className="w-32 md:w-48 my-2"></Button>
-          <Button title="Resume" link="/Resume.pdf" className="w-32 md:w-48 my-2"></Button>
-          <Button title="Projects" link="/projects" className="w-32 md:w-48 my-2"></Button>
+          <Button title="Resume" link="/Resume.pdf" target="_blank" className="w-32 md:w-48 my-2"></Button>
+          {/* <Button title="Projects" link="/projects" className="w-32 md:w-48 my-2"></Button> */}
           <div className="flex justify-center gap-4 my-2"> 
             {linkInfo.map((link)=>
             <a
