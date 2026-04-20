@@ -1,67 +1,75 @@
-import Image from "next/image";
-import Button from "@/components/Button";
-import Card from "@/components/Card";
-import { LinkInfo } from "@/types";
-import SocialIcon from "@/components/SocialIcons";
+import Header from "@/components/Header";
+import FeaturedCarousel from "@/components/FeaturedCarousel";
+import ProjectCard from "@/components/ProjectCard";
+import { featuredProjects, allProjects } from "@/data/projects";
 
 export default function Home() {
-  const linkInfo: LinkInfo[] = [
-    {
-      type: "linkedin",
-      url: "https://linkedin.com/in/victor-fawole",
-      label: "LinkedIn",
-      size: 20,
-    },
-    {
-      type: "github",
-      url: "https://github.com/sentiaus",
-      label: "GitHub",
-      size: 22,
-    },
-    {
-      type: "mail",
-      url: "mailto:victorafawole@gmail.com",
-      label: "Email",
-    },
-  ]
-
   return (
-  <div className="flex flex-col items-center justify-center min-h-screen px-8 lg:py-8 gap-16 sm:px-20 ">
-    <div className="flex flex-1 w-full max-w-6xl md:max-h-[1000px] h-screen lg:h-full gap-4 flex-col lg:flex-row md:rounded-md overflow-hidden bg-primary dark:bg-dark-primary">
-      <Card className="relative flex-1 min-h-[33vh]">
-        <Image  
-          src="/GradPic.png"
-          alt="Picture of Victor Fawole"
-          fill
-          className="object-cover"
-        />
-      </Card>
-      <Card className="flex-1 flex flex-col items-center">
-        <div className="flex-1 flex flex-col py-4 items-center justify-center text-center flex-[1_1_50%]">
-          <h1 className="text-2xl md:text-4xl lg:text-6xl pt-4 ">Victor Fawole</h1>
-          <div className="my-8 border-b w-32"></div>
-          <h3 className="text-sm md:text-xl">The Ohio State University</h3>
-          <h3 className="text-xs md:text-lg">Computer Science and Engineering, B.S.</h3>
+    <div className="min-h-screen bg-paper">
+      <Header />
+
+      {/* Featured carousel */}
+      <FeaturedCarousel projects={featuredProjects} />
+
+      {/* Catalog */}
+      <main className="max-w-6xl mx-auto px-6 py-14">
+        {/* Section header */}
+        <div className="pb-4 mb-12 flex items-end justify-between">
+          <div>
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted block mb-1.5">
+              Catalog
+            </span>
+            <h1 className="font-condensed font-bold uppercase text-ink leading-none tracking-wide"
+              style={{ fontSize: "clamp(28px, 4vw, 48px)" }}
+            >
+              All Work
+            </h1>
+          </div>
+          <span className="font-mono text-[10px] text-smoke pb-1">
+            {String(allProjects.length).padStart(2, "0")} projects
+          </span>
         </div>
-        <div className="flex flex-col flex-1 flex-[2_1_50%] justify-start items-center">
-          <Button title="About" link="/about" className="w-32 md:w-48 my-2"></Button>
-          <Button title="Resume" link="/Resume.pdf" target="_blank" className="w-32 md:w-48 my-2"></Button>
-          {/* <Button title="Projects" link="/projects" className="w-32 md:w-48 my-2"></Button> */}
-          <div className="flex justify-center gap-4 my-2"> 
-            {linkInfo.map((link)=>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-14">
+          {allProjects.map((project, i) => (
+            <ProjectCard key={project.id} project={project} index={i} />
+          ))}
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer>
+        <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+          <span className="font-mono text-[10px] text-smoke uppercase tracking-widest">
+            &copy; {new Date().getFullYear()} Victor Fawole
+          </span>
+          <div className="flex items-center gap-6">
             <a
-              key={link.type}
-              href={link.url}
+              href="https://github.com/sentiaus"
               target="_blank"
-              rel="noreferrer" 
-              aria-label={link.label}
-              >
-              <SocialIcon type={link.type} size={link.size} />
-            </a>)}
+              rel="noopener noreferrer"
+              className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted hover:text-ink transition-colors duration-200"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/victor-fawole"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted hover:text-ink transition-colors duration-200"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="mailto:victorafawole@gmail.com"
+              className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted hover:text-ink transition-colors duration-200"
+            >
+              Email
+            </a>
           </div>
         </div>
-      </Card>
+      </footer>
     </div>
-  </div>
   );
 }

@@ -1,5 +1,11 @@
 import Link from "next/link"
-import { ButtonProps } from "@/types"
+
+interface ButtonProps {
+  title: string;
+  link: string;
+  target?: string;
+  className?: string;
+}
 
 
 export default function Button({title, link, target, className}: ButtonProps) {

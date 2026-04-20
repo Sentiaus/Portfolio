@@ -1,42 +1,27 @@
-import { ReactNode } from "react"
+export type LinkType = "youtube" | "github" | "linkedin" | "medium" | "gdrive" | "website";
 
-interface ButtonProps{
-    title: string,
-    link: string,
-    target?: string,
-    className?: string,
-}
-
-interface CardProps{
-    children?: ReactNode,
-    className?: string,
-}
-
-interface LinkInfo {
-  type: IconType;
+export interface ProjectLink {
+  type: LinkType;
   url: string;
-  label: string;             // For accessibility / tooltips
-  size?: number;             // Icon size in pixels, optional
-  color?: string;            // Default color (Tailwind class or hex)
-  hoverColor?: string;       // Hover color (Tailwind class or hex)
 }
 
-type IconType = "linkedin" | "github" | "mail";
-
-interface SocialIconProps {
-  type: IconType;
-  size?: number; // optional size in pixels
-  className?: string; // optional extra classes
+export interface Project {
+  id: string;
+  title: string;
+  year: string;
+  category: string;
+  description: string;
+  tags: string[];
+  image?: string;
+  links?: ProjectLink[];
+  accent?: string;
 }
 
-interface Project {
-  name: string;
-  text: string;
+export interface BlogPost {
+  slug: string;
+  title: string;
   date: string;
-  links?: {
-    text: string;
-    link: string;
-  }[];
+  tags: string[];
+  excerpt: string;
+  readTime: string;
 }
-
-export type { ButtonProps, CardProps, LinkInfo, SocialIconProps, Project }

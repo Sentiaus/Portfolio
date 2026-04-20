@@ -1,4 +1,9 @@
-import { CardProps } from "@/types";
+import { ReactNode } from "react";
+
+interface CardProps {
+  children?: ReactNode;
+  className?: string;
+}
 
 export default function Card({
     children,

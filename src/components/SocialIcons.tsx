@@ -1,5 +1,12 @@
 import React from "react";
-import { SocialIconProps } from "@/types";
+
+type IconType = "linkedin" | "github" | "mail";
+
+interface SocialIconProps {
+  type: IconType;
+  size?: number;
+  className?: string;
+}
 
 
 export default function SocialIcon({

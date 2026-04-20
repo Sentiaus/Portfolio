@@ -2,47 +2,41 @@
 
 @theme {
 
-  --color-*: initial;
+  /* Paper palette — warm off-white + graphite monochrome */
+  --color-paper:      #F0EDE5;
+  --color-ink:        #1C1A18;
+  --color-graphite:   #3C3936;
+  --color-muted:      #7A7570;
+  --color-smoke:      #B0ABA3;
+  --color-ruled:      #D4CFC7;
+  --color-card:       #E6E2D9;
 
-  /* Light mode */
-  --color-bg: #f5f0e6;
-  --color-text: #4b3a2f;
-  --color-button: #8c6a4f;
-  --color-primary: #d9c5b2;
-  --color-secondary: #556b2f;
-
-  /* Dark mode */
-  --color-dark-bg: #1c1a17;
-  --color-dark-text: #d8cbb9;
-  --color-dark-button: #a0653f;
-  --color-dark-primary: #4e3b2f;
-  --color-dark-secondary: #3e4a32;
+  /* Typography */
+  --font-sans:        var(--font-barlow), 'Barlow', system-ui, sans-serif;
+  --font-mono:        var(--font-space-mono), 'Space Mono', monospace;
+  --font-condensed:   var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
 
 }
 
-
-:root {
-  --background: var(--color-bg);
-  --foreground: var(--color-text);
-  --primary: var(--color-primary);
-  --secondary: var(--color-secondary);
-  --button: var(--color-button);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--color-dark-bg);
-    --foreground: var(--color-dark-text);
-    --primary: var(--color-dark-primary);
-    --secondary: var(--color-dark-secondary);
-    --button: var(--color-dark-button);
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: #F0EDE5;
+  color: #1C1A18;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-
+::selection {
+  background-color: #1C1A18;
+  color: #F0EDE5;
+}
